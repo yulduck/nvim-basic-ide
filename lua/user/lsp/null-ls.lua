@@ -13,12 +13,18 @@ null_ls.setup {
   debug = false,
   sources = {
     formatting.prettier.with {
-      extra_filetypes = { "toml" },
+      extra_filetypes = { "toml", "svelte" },
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+      timeout = 3000,
     },
-    formatting.black.with { extra_args = { "--fast" } },
+    -- formatting.black.with { extra_args = { "--fast" } },
     formatting.stylua,
-    formatting.google_java_format,
-    diagnostics.flake8,
+    -- formatting.google_java_format,
+    -- diagnostics.flake8,
+    require("null-ls").builtins.diagnostics.eslint,
+    require("null-ls").builtins.diagnostics.tsc,
+    require("null-ls").builtins.diagnostics.write_good,
+    require("null-ls").builtins.completion.spell,
+    require("null-ls").builtins.code_actions.gitsigns,
   },
 }
