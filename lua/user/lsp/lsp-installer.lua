@@ -18,6 +18,13 @@ local servers = {
   "rome",
   "eslint",
   "cssmodules_ls",
+  "diagnosticls",
+  "dockerls",
+  "dotls",
+  "grammarly",
+  "quick_lint_js",
+  "stylelint_lsp",
+  "tsserver"
 }
 
 lsp_installer.setup()
