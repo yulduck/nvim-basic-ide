@@ -30,13 +30,16 @@ if not status_ok then
 end
 
 -- Have packer use a popup window
-packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
-		end,
-	},
-})
+packer.init {
+  display = {
+    open_fn = function()
+      return require("packer.util").float { border = "rounded" }
+    end,
+  },
+  git = {
+    clone_timeout = 300, -- Timeout, in seconds, for git clones
+  },
+}
 
 -- Install your plugins here
 return packer.startup(function(use)
@@ -75,9 +78,12 @@ return packer.startup(function(use)
 
 	-- LSP
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
-	use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
+ 	-- use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
+  use { "williamboman/mason.nvim"}
+  use { "williamboman/mason-lspconfig.nvim"}
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
 	use({ "RRethy/vim-illuminate" })
+
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" })
@@ -94,6 +100,7 @@ return packer.startup(function(use)
 	use({ "mfussenegger/nvim-dap" })
 	use({ "rcarriga/nvim-dap-ui" })
 	use({ "ravenxrz/DAPInstall.nvim" })
+
 
 	-- Eddie
 	use({ "jose-elias-alvarez/typescript.nvim" })
