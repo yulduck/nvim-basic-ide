@@ -15,7 +15,7 @@ local servers = {
   "eslint",
   "svelte",
   "tailwindcss",
-  "rome",
+  --[[ "rome", ]]
   "eslint",
   "cssmodules_ls",
   "diagnosticls",

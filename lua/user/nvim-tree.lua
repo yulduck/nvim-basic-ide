@@ -54,7 +54,8 @@ nvim_tree.setup {
     },
   },
   view = {
-    width = 30,
+    width = 55,
+    preserve_window_proportions = true,
     -- height = 30,
     side = "left",
     mappings = {

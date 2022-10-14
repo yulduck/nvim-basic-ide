@@ -24,6 +24,14 @@ null_ls.setup {
     -- formatting.google_java_format,
     -- diagnostics.flake8,
     require("null-ls").builtins.diagnostics.eslint,
+    require("null-ls").builtins.formatting.eslint,
+    null_ls.builtins.formatting.rustywind,
+    null_ls.builtins.completion.tags,
+    null_ls.builtins.code_actions.eslint,
+    null_ls.builtins.code_actions.refactoring,
+    null_ls.builtins.diagnostics.xo.with{
+      args = {"--stdin-filename", "$FILENAME"}
+    },
     require("null-ls").builtins.diagnostics.tsc,
     require("null-ls").builtins.diagnostics.write_good,
     require("null-ls").builtins.completion.spell,
