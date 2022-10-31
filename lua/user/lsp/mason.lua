@@ -7,6 +7,16 @@ local servers = {
 	"bashls",
 	"jsonls",
 	"yamlls",
+	"svelte",
+  "tailwindcss",
+  "eslint",
+  "cssmodules_ls",
+  "diagnosticls",
+  "dockerls",
+  "dotls",
+  "grammarly",
+  "quick_lint_js",
+  "stylelint_lsp",
 }
 
 local settings = {
